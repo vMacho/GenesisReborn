@@ -1,0 +1,292 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 760 (ID=0x1187)
+    Vendor:   NVIDIA
+    VRAM:     3072 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.056 seconds
+desktop: 1920x1080 60Hz; virtual: 3688x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\Victor\Documents\Genesis Reborn\Builds\PC_WINDOWS\mes1_Data\Managed\System.dll (this message is harmless)
+Ultimo level level_alpha
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+lvl_menu_start_GM:Start() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\lvl_menu_start_GM.cs:18)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/lvl_menu_start_GM.cs Line: 18)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: abc -> priority: 1 
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 5.607818 ms
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Player:Awake() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:37)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+System memory in use before: 18.4 MB.
+System memory in use after: 18.5 MB.
+
+Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 535.
+Total: 0.560306 ms (FindLiveObjects: 0.023788 ms CreateObjectMapping: 0.017932 ms MarkObjects: 0.427823 ms  DeleteObjects: 0.089663 ms)
+
+ESTOY EN State_Walk
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:27)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_GetItem
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Walk:OnTriggerStay(Collider) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Walk.cs:62)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_GetItem:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_GetItem.cs:32)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Walk
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:27)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_GetItem
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Walk:OnTriggerStay(Collider) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Walk.cs:62)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_GetItem:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_GetItem.cs:32)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Walk
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:27)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Walk:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Walk.cs:29)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Walk
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:27)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Walk:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Walk.cs:29)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_SearchingBag
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:23)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_SearchingBag:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_SearchingBag.cs:23)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_SearchingBag
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:23)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_SearchingBag:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_SearchingBag.cs:23)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Attack
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:26)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Walk
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Attack:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Attack.cs:40)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Walk:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Walk.cs:29)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Attack
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:26)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Walk
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Attack:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Attack.cs:40)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Idle
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Walk:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Walk.cs:29)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
+ESTOY EN State_Attack
+UnityEngine.Debug:Internal_Log(Int32, String, Object)
+UnityEngine.Debug:Log(Object)
+MachineStateController:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:95)
+Controller:ChangeState(States) (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:319)
+State_Idle:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\State_Idle.cs:26)
+MachineStateController:UpdateState() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\States\MachineStateController.cs:20)
+Controller:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Core\Controller.cs:147)
+Player:FixedUpdate() (at C:\Users\Victor\Documents\Genesis Reborn\Assets\Scripts\Player\Player.cs:43)
+ 
+(Filename: C:/Users/Victor/Documents/Genesis Reborn/Assets/Scripts/States/MachineStateController.cs Line: 95)
+
