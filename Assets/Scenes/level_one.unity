@@ -44,7 +44,7 @@ LevelGameManager:
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_LightmapsMode: 1
   m_GISettings:
     serializedVersion: 2
@@ -68,7 +68,7 @@ LightmapSettings:
     m_TextureCompression: 1
     m_FinalGather: 0
     m_FinalGatherRayCount: 1024
-  m_LightmapSnapshot: {fileID: 112000000, guid: 40f3e4ce7e40f1940bcabe1882f3b534,
+  m_LightmapSnapshot: {fileID: 112000000, guid: 212800f8215168b4197700ad1664f2cf,
     type: 2}
   m_RuntimeCPUUsage: 25
 --- !u!196 &5

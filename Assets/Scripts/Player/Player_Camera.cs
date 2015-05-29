@@ -14,7 +14,7 @@ public class Player_Camera : MonoBehaviour
 	void Start () 
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        transform.position = new Vector3(player.position.x, altura, -offset);
+        transform.position = new Vector3(player.position.x, player.position.y + altura, -offset);
         transform.LookAt(player);
 	}
     

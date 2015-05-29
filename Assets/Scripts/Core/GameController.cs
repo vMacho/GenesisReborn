@@ -8,6 +8,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController current;
 
+    public AudioClip BackgroundMusic;
+
     public Player player = null;
     bool _gamepaused, _havetorestaureInventory;
     int kill_y = -30;
@@ -17,15 +19,23 @@ public class GameController : MonoBehaviour
     
     DayPos daylight;
 
-    void Awake() 
-    { 
-        current = this;
+    void Awake()
+    {
+        if (current != null && current != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        else
+        {
+            current = this;
 
-        current.daylight = DayPos.dia;
+            current.daylight = DayPos.dia;
 
-        Invoke("HideInfo", 5);
+            Invoke("HideInfo", 5);
+        }
     }
-
+    
 	void Start () 
 	{
         current.player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
@@ -47,6 +57,9 @@ public class GameController : MonoBehaviour
             GameInfo.current = new GameInfo();
             Invoke("SaveGame", 1);
         }
+
+        if (AudioManager.current == null) Instantiate(Resources.Load("Sounds/AudioManager")); //Si no hay un audioManager
+        if (!AudioManager.current.IsPlaying(BackgroundMusic)) AudioManager.current.Play(BackgroundMusic); //Si no se esta reproduciendo hazlo
 	}
 
 	void Update () 

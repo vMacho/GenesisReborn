@@ -5,13 +5,18 @@ using UnityEngine.EventSystems;
 
 public class lvl_menu_start_GM : MonoBehaviour 
 {
-    string[] levels = { "level_alpha" };
+    public AudioClip BackgroundMusic;
+
+    string[] levels = { "level_one" };
     string actual_level;
 
 	// Use this for initialization
 	void Start () 
     {
-        for (int i = levels.Length - 1; i >= 0 - 1; ++i)
+        if (AudioManager.current == null) Instantiate(Resources.Load("Sounds/AudioManager")); //Si no hay un audioManager
+        if (!AudioManager.current.IsPlaying(BackgroundMusic)) AudioManager.current.Play(BackgroundMusic); //Si no se esta reproduciendo hazlo
+        
+        for (int i = levels.Length - 1; i >= 0; --i)
         {
             if (File.Exists(Application.persistentDataPath + "/" + levels[i] + "/savedGames.gd"))
             {
@@ -27,16 +32,10 @@ public class lvl_menu_start_GM : MonoBehaviour
             }
         }
 	}
-	
-	// Update is called once per frame
-	void Update () 
-    {
-	
-	}
 
     public void StartGame()
     {
-        PlayerPrefs.SetString("LoadLevel", "level_alpha");
+        PlayerPrefs.SetString("LoadLevel", levels[0]);
         Application.LoadLevel("loading_screen");
     }
 
