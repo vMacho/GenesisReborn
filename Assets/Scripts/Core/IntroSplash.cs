@@ -8,13 +8,15 @@ public class IntroSplash : MonoBehaviour
 
 	void Start () 
 	{
-        Invoke("PermitirQuitar", 2);
+        if (AudioManager.current == null) Instantiate(Resources.Load("Sounds/AudioManager")); //Si no hay un audioManager
+
+        Invoke("PermitirQuitar", 1);
         Invoke("Quitar", 4);
 	}
     
     void Update()
     {
-        if (canQuitSplashScreen && (Input.GetAxis("Jump") > 0 || Input.GetAxis("Start") > 0)) Quitar();
+        if (canQuitSplashScreen && (Input.GetAxis("Jump") > 0 || Input.GetAxis("Start") > 0 || Input.touchCount > 0)) Quitar();
     }
 
     public void Quitar(){ Application.LoadLevel("level_menu_start"); }

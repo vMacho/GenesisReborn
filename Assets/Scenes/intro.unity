@@ -116,10 +116,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: .196078435, g: .196078435, b: .196078435, a: 1}
+  m_Color: {r: .79411763, g: .79411763, b: .79411763, a: 1}
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
+    m_FontSize: 32
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -330,6 +330,60 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94121bc58d33b604197d8c194a5a81f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1001 &1131425152
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 11406662, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: PlayList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 458516, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406662, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: PlayList.Array.data[0].Grupo
+      value: Desconocido
+      objectReference: {fileID: 0}
+    - target: {fileID: 11406662, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+      propertyPath: PlayList.Array.data[0].Song
+      value: 
+      objectReference: {fileID: 8300000, guid: ab9437ef8e55fca4697225c9b0428292, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: ef4c90e92ff810845bf3f10a2991ec56, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1250482048
 GameObject:
   m_ObjectHideFlags: 0

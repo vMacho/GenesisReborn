@@ -45,8 +45,6 @@ public enum button_pad
     Circle,
     Cross,
     Square,
-    Start,
-    Select,
     L1,
     L2,
     L3,

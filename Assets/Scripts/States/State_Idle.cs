@@ -3,8 +3,9 @@ using System.Collections;
 
 public class State_Idle : State 
 {
-    float bored_time = 30, bored_time_actual = 0;
+    float bored_time = 30, bored_time_actual = 0, time_to_canPush;
     bool _bored;
+    GameObject lastCollision;
 
     protected override void Awake() 
 	{
@@ -55,6 +56,22 @@ public class State_Idle : State
                 }
             }
         }
+
+        if (!stopTrigger && lastCollision != null)
+        {
+            if (Vector3.Distance(lastCollision.transform.position, transform.position) < 1.3f)
+            {
+                if (time_to_canPush > 1)
+                {
+                    if (controller.GetButton(button_pad.Circle) && controller.CanOverhang() && controller.CanOverhangFoot())
+                    {
+                        stopTrigger = true;
+                        controller.ChangeState<State_Pushing>(lastCollision);
+                    }
+                }
+                else time_to_canPush += Time.fixedDeltaTime;
+            }
+        }
 	}
 
     void OnCollisionStay(Collision collisionInfo)
@@ -63,11 +80,17 @@ public class State_Idle : State
         {
             if (collisionInfo.gameObject.GetComponent<CanPush>())
             {
-                if (controller.GetButton(button_pad.Circle) && controller.GetPrevState() != States.State_Pushing && controller.CanOverhang() && controller.CanOverhangFoot())
+                lastCollision = collisionInfo.gameObject;
+
+                if ( time_to_canPush > 1)
                 {
-                    stopTrigger = true;
-                    controller.ChangeState<State_Pushing>(collisionInfo.gameObject);
+                    if (controller.GetButton(button_pad.Circle) && controller.CanOverhang() && controller.CanOverhangFoot())//&& controller.GetPrevState() != States.State_Pushing
+                    {
+                        stopTrigger = true;
+                        controller.ChangeState<State_Pushing>(collisionInfo.gameObject);
+                    }
                 }
+                else time_to_canPush += Time.fixedDeltaTime;
             }
         }
     }

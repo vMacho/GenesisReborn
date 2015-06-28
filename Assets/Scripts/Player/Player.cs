@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : Controller, Attackable 
 {
@@ -11,6 +12,9 @@ public class Player : Controller, Attackable
     public float maxCombo { get; set; }
     public bool IsAttacking { get; set; }
     public int actualCombo { get; set; }
+
+    GameObject MobileControl;
+    Joystick joystick;
 
     protected override void Awake() 
 	{
@@ -40,13 +44,22 @@ public class Player : Controller, Attackable
         maxCombo = 3;
 
         ChangeState<State_Idle>();
-	}
+    }
     
     void Update()
     {
-        UpdateControls();
+        if (!GameController.current.IsPaused())
+        {
+            #if UNITY_EDITOR
+            UpdateControls();
+            #elif MOBILE_INPUT 
+            UpdateMobileControls();
+            #else
+            UpdateControls();
+            #endif
+        }
 
-        if (Mando.GetButton(button_pad.Start)) GameController.current.SetGamePause(!GameController.current.IsPaused());
+        if (Input.GetButtonDown("Start")) GameController.current.SetGamePause(!GameController.current.IsPaused());
 
         if (GetWeapon() != null)
         {
@@ -71,21 +84,44 @@ public class Player : Controller, Attackable
         /**************************************************************************/
 
         /*** Buttons **/
-        Mando.SetButton(button_pad.Cross, (Input.GetButton("Jump") ));
+        Mando.SetButton(button_pad.Cross, (Input.GetButtonDown("Jump") ));
 
         Mando.SetButton(button_pad.Square, (Input.GetButtonDown("Attack") ));
 
-        Mando.SetButton(button_pad.Circle, (Input.GetButtonDown("Action") ));
+        Mando.SetButton(button_pad.Circle, (Input.GetButton("Action") ));
 
         Mando.SetButton(button_pad.Triangle, Input.GetButtonDown("Inventory"));
-
-        Mando.SetButton(button_pad.Start, (Input.GetButtonDown("Start") ));
-
+        
         Mando.SetButton(button_pad.R2, (Input.GetAxis("Dash") <= -0.5f));
 
         Mando.SetButton(button_pad.R3, Input.GetButtonDown("Quest"));
 		/**************************************************************************/
 	}
+
+    void UpdateMobileControls()
+    {
+        /**** PAD ***/
+        Mando.SetPad(direcction_pad.Right, (CrossPlatformInputManager.GetAxis("Horizontal") > 0) ? CrossPlatformInputManager.GetAxis("Horizontal") : 0);
+        Mando.SetPad(direcction_pad.Left, (CrossPlatformInputManager.GetAxis("Horizontal") < 0) ? CrossPlatformInputManager.GetAxis("Horizontal") : 0);
+
+        Mando.SetPad(direcction_pad.Up, CrossPlatformInputManager.GetAxis("Vertical"));
+        Mando.SetPad(direcction_pad.Down, CrossPlatformInputManager.GetAxis("Vertical"));
+        /**************************************************************************/
+
+        /*** Buttons **/
+        Mando.SetButton(button_pad.Cross, (CrossPlatformInputManager.GetButton("Jump")));
+
+        Mando.SetButton(button_pad.Square, (CrossPlatformInputManager.GetButtonDown("Attack")));
+
+        Mando.SetButton(button_pad.Circle, (CrossPlatformInputManager.GetButtonDown("Action")));
+
+        Mando.SetButton(button_pad.Triangle, CrossPlatformInputManager.GetButtonDown("Inventory"));
+
+        Mando.SetButton(button_pad.R2, (CrossPlatformInputManager.GetButtonDown("Dash")));
+
+        Mando.SetButton(button_pad.R3, CrossPlatformInputManager.GetButtonDown("Quest"));
+        /**************************************************************************/
+    }
 
     public void AddQuest(Quest q) //añade una quest
     {

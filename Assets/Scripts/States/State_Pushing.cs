@@ -4,7 +4,7 @@ using System.Collections;
 public class State_Pushing : State 
 {
     Rigidbody box;
-    float default_mass, dead_time, dead_time_default = 1;
+    float default_mass, dead_time, dead_time_default = 1, time;
 
     protected override void Awake() 
 	{
@@ -15,23 +15,28 @@ public class State_Pushing : State
 
     public override void UpdateState() 
 	{
-        if (!controller.IsLanded()) controller.ChangeState<State_Jump>(); //si estoy cayendo
-        else if (controller.GetButton(button_pad.Cross)) controller.Jump(); //si salto
-        else if (controller.GetButton(button_pad.Circle)) controller.ChangeState<State_Idle>(); //si dejo de empujar
-        else if (box) //si tengo algo que empujar
-        {
-            if (Vector3.Distance(box.position, controller.transform.position) <= 2)
-            {
-                int dir = (box.transform.position.x < controller.GetRigidbody().position.x) ? -1 : 1;
-
-                controller.Push(dir);
-            }
-            else controller.ChangeState<State_Idle>();
-        }
+        if (time < 0.5f) time += Time.deltaTime; //Tiempo mínimo para este estado
         else
         {
-            dead_time += Time.fixedDeltaTime;
-            if (dead_time >= dead_time_default) controller.ChangeState<State_Idle>();
+
+            if (!controller.IsLanded()) controller.ChangeState<State_Jump>(); //si estoy cayendo
+            else if (controller.GetButton(button_pad.Cross)) controller.Jump(); //si salto
+            else if (controller.GetButton(button_pad.Circle)) controller.ChangeState<State_Idle>(); //si dejo de empujar
+            else if (box) //si tengo algo que empujar
+            {
+                if (Vector3.Distance(box.position, controller.transform.position) <= 2)
+                {
+                    int dir = (box.transform.position.x < controller.GetRigidbody().position.x) ? -1 : 1;
+
+                    controller.Push(dir);
+                }
+                else controller.ChangeState<State_Idle>();
+            }
+            else
+            {
+                dead_time += Time.fixedDeltaTime;
+                if (dead_time >= dead_time_default) controller.ChangeState<State_Idle>();
+            }
         }
 	}
     

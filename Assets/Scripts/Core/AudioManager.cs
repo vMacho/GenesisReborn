@@ -6,10 +6,20 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager current;
+
+    [Header("Lista Canciones")]
+    public int duracionAviso = 4;
+    public List<Cancion> PlayList = new List<Cancion>();
+    int current_song = -1;
+    string sonando = "";
+
+    GameObject aviso;
     AudioSource Audio;
     float prev_volumen;
 
@@ -30,19 +40,76 @@ public class AudioManager : MonoBehaviour
 
             prev_volumen = Audio.volume;
 
+            Audio.loop = false; //Loop del background
+
             current = this;
         }
 
-        DontDestroyOnLoad( gameObject ); //Para perdurar por las escenas
+        Shuffle(PlayList); //Reordenamos la playlist
+
+        DontDestroyOnLoad(gameObject); //Para perdurar por las escenas
     }
-    
-    public void Play(AudioClip clip) //Escuchamos la canción de fondo
+
+    void Update()
+    {
+        if (!Audio.isPlaying && PlayList.Count > 0)
+        {
+            Next();
+            //MostrarAviso();
+        }
+
+        //Depuracion
+        if (Input.GetKeyDown(KeyCode.N)) Next();
+    }
+
+    public void Play(AudioClip clip) //Escuchamos la canción de fondo (una)
     {
         if (Audio)
         {
             Audio.clip = clip;
 
             Audio.Play();
+        }
+    }
+
+    public void Next() //Escuchamos la canción siguiente de fondo (playlist)
+    {
+        //QuitarAviso();
+
+        current_song = (current_song + 1 == PlayList.Count) ? 0 : current_song + 1;
+
+        Audio.clip = PlayList[current_song].Song;
+
+        sonando = PlayList[current_song].Song.name + " de " + PlayList[current_song].Grupo;
+        Debug.Log("Sonando " + sonando);
+
+        Audio.Play();
+    }
+
+    public void Prev() //Escuchamos la canción anterior de fondo (playlist)
+    {
+        //QuitarAviso();
+
+        current_song = (current_song - 1 < 0) ? PlayList.Count - 1 : current_song - 1;
+
+        Audio.clip = PlayList[current_song].Song;
+
+        sonando = PlayList[current_song].Song.name + " de " + PlayList[current_song].Grupo;
+        Debug.Log("Sonando " + sonando);
+
+        Audio.Play();
+    }
+
+    public static void Shuffle<T>(List<T> ts)
+    {
+        var count = ts.Count;
+        var last = count - 1;
+        for (var i = 0; i < last; ++i)
+        {
+            var r = UnityEngine.Random.Range(i, count);
+            var tmp = ts[i];
+            ts[i] = ts[r];
+            ts[r] = tmp;
         }
     }
 
@@ -59,7 +126,7 @@ public class AudioManager : MonoBehaviour
 
     public float GetVolumen() { return Audio.volume; }
 
-    public void SetVolumen( float val )
+    public void SetVolumen(float val)
     {
         PlayerPrefs.SetFloat("Volumen", val);
         Audio.volume = prev_volumen = val;
@@ -83,4 +150,30 @@ public class AudioManager : MonoBehaviour
 
         PlayerPrefs.SetInt("Muted", 0);
     }
+
+    /*void MostrarAviso()
+    {
+        aviso = Instantiate(Resources.Load("PlayList/AvisoCancion")) as GameObject;
+        aviso.GetComponentInChildren<Text>().text = "Sonando " + sonando;
+        aviso.transform.SetParent(this.transform);
+
+        Invoke("QuitarAviso", duracionAviso);
+    }
+
+    public void QuitarAviso()
+    {
+        Destroy(aviso);
+    }*/
+
+    public string Sonando()
+    {
+        return sonando;
+    }
+}
+
+[System.Serializable]
+public struct Cancion
+{
+    public AudioClip Song;
+    public string Grupo;
 }

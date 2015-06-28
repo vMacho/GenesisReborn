@@ -300,6 +300,7 @@ GameObject:
   - 222: {fileID: 22293328}
   - 114: {fileID: 11473934}
   - 114: {fileID: 11467334}
+  - 225: {fileID: 22595874}
   m_Layer: 5
   m_Name: Menu_Inventario
   m_TagString: Untagged
@@ -2430,7 +2431,7 @@ RectTransform:
   m_GameObject: {fileID: 154892}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .300000012, y: .300000012, z: .300000012}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 22450116}
   - {fileID: 22415172}
@@ -2445,7 +2446,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 291, y: -42}
   m_SizeDelta: {x: 435, y: 517.609985}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22465054
@@ -2640,6 +2641,17 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: .5, y: .5}
+--- !u!225 &22595874
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154892}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
