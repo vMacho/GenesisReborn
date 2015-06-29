@@ -8,12 +8,10 @@ public class lvl_menu_start_GM : MonoBehaviour
 {
     public Animator Credits, Options;
     public Toggle Mute, FullScreen;
-    public Text ComboResolucion;
 
     string[] levels = { "level_one" };
     string actual_level;
 
-	// Use this for initialization
 	void Start () 
     {
         if (AudioManager.current == null) Instantiate(Resources.Load("Sounds/AudioManager")); //Si no hay un audioManager
@@ -36,10 +34,23 @@ public class lvl_menu_start_GM : MonoBehaviour
 
         if (PlayerPrefs.GetInt("Muted") == 1) Mute.isOn = true;
         if (PlayerPrefs.GetInt("FullScreen") == 1) FullScreen.isOn = true;
-        if (!PlayerPrefs.HasKey("Resolucion")) PlayerPrefs.SetString("Resolucion", Screen.width + " x " + Screen.height);
+        if (!PlayerPrefs.HasKey("Resolucion"))
+        {
+            for (int i = 0; i < Screen.resolutions.Length; ++i)
+            {
+                if( Screen.resolutions[i].width == Screen.currentResolution.width && Screen.resolutions[i].height == Screen.currentResolution.height )
+                {
+                    PlayerPrefs.SetInt("Resolucion", i );
+                    break;
+                }
+            }            
+        }
 
-        ChangeResolution(PlayerPrefs.GetString("Resolucion"));
+        #if UNITY_EDITOR
+        PlayerPrefs.SetInt("Resolucion", 0); //sólo hay una resolucion
+        #endif
 
+        Screen.SetResolution(Screen.resolutions[PlayerPrefs.GetInt("Resolucion")].width, Screen.resolutions[PlayerPrefs.GetInt("Resolucion")].height, (PlayerPrefs.GetInt("FullScreen") == 1));
 	}
 
     public void StartGame()
@@ -97,17 +108,7 @@ public class lvl_menu_start_GM : MonoBehaviour
 
     public void ChangeFullScreen(bool val)
     {
-        Screen.fullScreen = val;
+        Screen.SetResolution(Screen.resolutions[PlayerPrefs.GetInt("Resolucion")].width, Screen.resolutions[PlayerPrefs.GetInt("Resolucion")].height, val);
         PlayerPrefs.SetInt("FullScreen", System.Convert.ToInt32(val));
-    }
-    
-    public void ChangeResolution(string val)
-    {
-        string []r = val.Split(new char[]{'x'});
-
-        Screen.SetResolution(int.Parse(r[0]), int.Parse(r[1]), (PlayerPrefs.GetInt("FullScreen") == 1) );
-        PlayerPrefs.SetString("Resolucion", val);
-
-        ComboResolucion.text = val;
     }
 }
