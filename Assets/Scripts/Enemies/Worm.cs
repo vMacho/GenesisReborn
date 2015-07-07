@@ -73,4 +73,6 @@ public class Worm : Controller, Attackable
         }
         else Debug.Log("No atraviesa la defensa");
     }
+
+    public void Health(float h) { }
 }

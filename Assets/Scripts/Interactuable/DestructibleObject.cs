@@ -41,4 +41,6 @@ public class DestructibleObject : MonoBehaviour, Attackable
         Debug.Log("HERIDO DESTRUCTIBLE OBJECT");
         health = Mathf.Max(0, health - damage);
     }
+
+    public void Health(float h){}
 }

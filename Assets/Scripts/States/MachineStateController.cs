@@ -73,4 +73,18 @@ public class MachineStateController : MonoBehaviour
     public void SetAnimatorSpeed( float val) { animator.speed = val; }
 
     public bool GetAnimation( string val ) { return animator.GetCurrentAnimatorStateInfo(0).IsName(val); }
+
+
+    public bool HasParameterOfType(string var, AnimatorControllerParameterType type) 
+    {
+        AnimatorControllerParameter[] parameters = animator.parameters;
+        foreach (AnimatorControllerParameter currParam in parameters)
+        {
+            if (currParam.type == type && currParam.name == name)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
 }

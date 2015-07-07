@@ -214,8 +214,26 @@ public class Player : Controller, Attackable
 
             GameController.current.UpdateHealth();
 
-            Debug.Log("HERIDO PLAYER " + damage);
+            GameObject ui = Instantiate(Resources.Load("UI/DamageText")) as GameObject;
+            ui.GetComponent<UI_DamageText>().SetDamage(damage);
+            ui.GetComponent<RectTransform>().localPosition = new Vector3(transform.position.x, 4, 0);
         }
         else Debug.Log("No atraviesa la defensa");
+
+        MachineState.SetTrigger("Hitted");
+
+        ChangeState<State_Attack>();
+    }
+
+    public void Health(float h)
+    {
+        health = Mathf.Min(health + h, maxhealth);
+
+        GameController.current.UpdateHealth();
+
+        GameObject ui = Instantiate(Resources.Load("UI/DamageText")) as GameObject;
+        ui.GetComponent<UI_DamageText>().SetHealth(h);
+        ui.GetComponent<RectTransform>().localPosition = new Vector3(transform.position.x, 4, 0);
+
     }
 }

@@ -16,8 +16,8 @@ public class Item_Heal : Item
 
             if (t.health < t.maxhealth)
             {
-                t.health = Mathf.Min(t.health + healing, t.maxhealth);
-                GameController.current.UpdateHealth();
+                t.Health(healing);
+                
                 return true;
             }
             else return false;

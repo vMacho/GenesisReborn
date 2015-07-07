@@ -495,4 +495,11 @@ public class Controller : MonoBehaviour
     {
         Say(i.description, 3);
     }
+
+    public void AnimationPlay(int code)
+    {
+        ChangeState<State_Animation>();
+
+        if (GetComponent<State_Animation>()) GetComponent<State_Animation>().SetAnimation(code);
+    }
 }

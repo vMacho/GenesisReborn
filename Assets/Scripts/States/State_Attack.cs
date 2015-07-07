@@ -3,7 +3,7 @@ using System.Collections;
 
 public class State_Attack : State 
 {
-    float bored_time = 60, reset_time = 0, default_reset_time = 2;
+    float bored_time = 30, reset_time = 0, default_reset_time = 2;
     bool resetCombo;
     Attackable attackData;
 
@@ -14,11 +14,15 @@ public class State_Attack : State
         attackData = gameObject.GetComponent<Attackable>();
 
         machine.SetRootMotion(true);
+
+        machine.SetValAnim("NoWeapon", (controller.GetWeapon() == null));
+
+        Debug.Log("Desarmado= "+(controller.GetWeapon() == null));
 	}
 
     public override void UpdateState()
     {
-        if (!attackData.IsAttacking)
+        if (!attackData.IsAttacking || !machine.GetAnimation("hitted"))
         {
             if (!controller.IsLanded()) controller.ChangeState<State_Jump>(); //si estoy cayendo
             else if (controller.GetButton(button_pad.Cross)) controller.Jump(); //si salto
@@ -27,7 +31,7 @@ public class State_Attack : State
                 controller.ChangeState<State_SearchingBag>();
                 GameController.current.OpenInventory(controller.GetInvetory(), controller, InventoryMode.self);
             }
-            else if (controller.GetButton(button_pad.Square) && !resetCombo)
+            else if (controller.GetButton(button_pad.Square) && !resetCombo && controller.GetWeapon() != null) //Si pulso atacar
             {
                 if (attackData.actualCombo < attackData.maxCombo)
                 {
@@ -42,7 +46,7 @@ public class State_Attack : State
             {
                 bored_time -= Time.fixedDeltaTime;
 
-                if (bored_time <= 0) machine.SetTrigger("Holster");
+                if (bored_time <= 0 && controller.GetWeapon() != null) machine.SetTrigger("Holster");
             }
 
             if (resetCombo)

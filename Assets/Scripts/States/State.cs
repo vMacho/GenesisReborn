@@ -40,5 +40,6 @@ public enum States
     State_Dead,
     State_HangRope,
     State_PlayAction,
-    State_Speak
+    State_Speak,
+    State_Animation
 }

@@ -9,5 +9,6 @@ public interface  Attackable
 
     void Kill();
     void Hit();
-    void Hurt( float d );
+    void Hurt(float d);
+    void Health(float h);
 }
